@@ -18,24 +18,30 @@
 2.  **조사 먼저, 구현 나중**: 외부 API(Upstage)나 라이브러리 사용 전 연동 방식과 패키지 버전을 반드시 먼저 확인합니다. (`context7` 도구 활용 권장)
 3.  **버그는 분석 먼저, 수정 나중**: 에러 발생 시 원인을 먼저 분석하고 설명한 뒤 수정을 진행합니다. 임의의 코드 수정을 지양합니다.
 
-## 3. 디렉토리 구조 (Target)
-현재 프로젝트는 아래 구조를 목표로 구현 중입니다.
+## 3. 디렉토리 구조 (Current)
+현재 프로젝트는 아래와 같이 구현되었습니다.
 ```
 biztalk-gemini-cli/
 ├── backend/
-│   ├── main.py                 # FastAPI 진입점 및 CORS 설정
-│   ├── routers/                # API 라우터 (convert.py 등)
-│   ├── services/               # 비즈니스 로직 (AI 연동 등)
-│   ├── prompts/                # 대상별 프롬프트 템플릿
-│   ├── models/                 # Pydantic 스키마
-│   └── requirements.txt        # 백엔드 의존성
+│   ├── main.py                 # FastAPI 진입점, CORS 및 정적 파일 서빙
+│   ├── routers/
+│   │   └── convert.py          # /api/convert 라우터 (ToneConverter 호출)
+│   ├── services/
+│   │   └── tone_converter.py   # 비즈니스 로직 (LangChain + Solar-Pro3 연동)
+│   ├── prompts/
+│   │   └── templates.py        # 수신 대상별 프롬프트 템플릿
+│   ├── models/
+│   │   └── schemas.py          # Pydantic 데이터 모델 (Request/Response)
+│   └── requirements.txt        # 백엔드 의존성 (fastapi, langchain-upstage 등)
 ├── frontend/
-│   ├── index.html              # 메인 UI
+│   ├── index.html              # 메인 UI (현재 빈 파일 또는 미작성)
 │   ├── css/                    # 스타일시트
 │   └── js/                     # 클라이언트 로직
+├── venv/                       # 파이썬 가상환경
 ├── .env                        # API 키 관리 (UPSTAGE_API_KEY)
-└── PRD_업무말투변환기.md       # 제품 요구사항 명세서
+└── PRD_업무말투변환기.md       # 제품 요구사항 명세서 (진행 상황 관리)
 ```
+
 
 ## 4. 실행 및 개발 가이드
 

@@ -1,0 +1,65 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "환경 준비 (STEP 1)",
+      "description": "프로젝트 시작을 위한 초기 환경 설정 및 의존성 설치",
+      "priority": "high",
+      "status": "done",
+      "subtasks": [
+        { "id": "1.1", "title": "GitHub 레포지토리 생성", "description": "프로젝트 코드 관리를 위한 원격 저장소 생성", "priority": "medium", "status": "done" },
+        { "id": "1.2", "title": "디렉토리 구조 생성", "description": "backend, frontend 등 폴더 구조 구성", "priority": "low", "status": "done" },
+        { "id": "1.3", "title": ".gitignore 작성", "description": "불필요한 파일 및 보안 파일 제외 설정", "priority": "low", "status": "done" },
+        { "id": "1.4", "title": "Upstage API 키 발급 및 .env 작성", "description": "AI 모델 연동을 위한 API 키 설정", "priority": "high", "status": "done" },
+        { "id": "1.5", "title": "requirements.txt 작성 및 버전 명시", "description": "필요한 파이썬 라이브러리 목록 작성", "priority": "medium", "status": "done" },
+        { "id": "1.6", "title": "가상환경(venv) 생성 및 의존성 설치", "description": "독립된 개발 환경 구축 및 라이브러리 설치", "priority": "medium", "status": "done" }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "백엔드 구현 (STEP 2)",
+      "description": "FastAPI 기반의 AI 변환 API 서버 구축",
+      "priority": "high",
+      "status": "done",
+      "subtasks": [
+        { "id": "2.1", "title": "schemas.py - 데이터 모델 정의", "description": "Pydantic을 이용한 요청/응답 스키마 정의", "priority": "medium", "status": "done" },
+        { "id": "2.2", "title": "templates.py - 프롬프트 템플릿 작성", "description": "수신 대상별 시스템 프롬프트 구성", "priority": "medium", "status": "done" },
+        { "id": "2.3", "title": "tone_converter.py - 핵심 변환 로직 구현", "description": "LangChain 및 Upstage AI 연동 로직", "priority": "high", "status": "done" },
+        { "id": "2.4", "title": "convert.py - API 라우터 구현", "description": "/api/convert 엔드포인트 정의", "priority": "medium", "status": "done" },
+        { "id": "2.5", "title": "main.py - 메인 앱 설정 (FastAPI + CORS)", "description": "CORS 설정 및 라우터 연결", "priority": "medium", "status": "done" },
+        { "id": "2.6", "title": "로컬 서버 실행 및 테스트", "description": "uvicorn으로 서버 실행 후 동작 확인", "priority": "high", "status": "done" }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "프론트엔드 구현 (STEP 3)",
+      "description": "사용자 인터페이스 및 클라이언트 로직 구현",
+      "priority": "medium",
+      "status": "in-progress",
+      "subtasks": [
+        { "id": "3.1", "title": "index.html - 화면 레이아웃 작성", "description": "입력창, 버튼, 결과창 등 UI 구조 작성", "priority": "medium", "status": "done" },
+        { "id": "3.2", "title": "style.css - 기본 스타일 적용", "description": "레이아웃 및 컴포넌트 스타일링", "priority": "low", "status": "done" },
+        { "id": "3.3", "title": "app.js - JS 기능 구현 (이벤트+API 호출)", "description": "API 호출 및 결과 화면 출력 로직", "priority": "high", "status": "done" },
+        { "id": "3.4", "title": "브라우저 최종 테스트", "description": "프론트-백 연동 통합 테스트", "priority": "high", "status": "pending" }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "배포 (STEP 4)",
+      "description": "Vercel을 통한 서비스 배포 및 최종 확인",
+      "priority": "medium",
+      "status": "pending",
+      "subtasks": [
+        { "id": "4.1", "title": "GitHub 코드 푸시", "description": "최신 코드를 GitHub에 업로드", "priority": "medium", "status": "pending" },
+        { "id": "4.2", "title": "Vercel 프론트엔드 디렉토리 연결", "description": "Vercel 프로젝트 생성 및 설정", "priority": "medium", "status": "pending" },
+        { "id": "4.3", "title": "API_BASE 배포용 URL로 수정", "description": "환경별 API 주소 설정 변경", "priority": "low", "status": "pending" },
+        { "id": "4.4", "title": "배포 후 동작 확인", "description": "실제 배포 URL에서 기능 작동 확인", "priority": "high", "status": "pending" }
+      ]
+    }
+  ],
+  "metadata": {
+    "project_name": "BizTalk_GeminiCLI",
+    "version": "1.0.0",
+    "description": "업무 말투 변환기 프로젝트 관리"
+  }
+}
